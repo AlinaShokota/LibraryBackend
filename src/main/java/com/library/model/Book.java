@@ -9,6 +9,7 @@ public class Book {
     private int id;
     private String title;
     private String author;
+    private String genre;
     private int year;
     private String publisher;
 
@@ -34,6 +35,14 @@ public class Book {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
     public int getYear() {

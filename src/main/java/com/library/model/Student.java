@@ -12,7 +12,7 @@ public class Student {
     private String firstName;
     private String lastName;
     private String groupName;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.MERGE)
     @JoinColumn(name = "student_id")
     private List<Book>books = new ArrayList<>();
 
