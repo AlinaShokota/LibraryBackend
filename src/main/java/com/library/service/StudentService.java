@@ -24,12 +24,14 @@ public class StudentService {
     }
 
     public void updateStudent(Student student) {
-            studentRepo.findById(student.getId()).ifPresentOrElse(student1 -> {
-                studentRepo.save(student);
-                LOGGER.info("Student has been updated");
-            }, () -> {
-                throw new NoSuchStudentException("No student found with id=" + student.getId());
-            });
+        studentRepo.save(student);
+        LOGGER.info("Student has been updated");
+//            studentRepo.findById(student.getId()).ifPresentOrElse(student1 -> {
+//                studentRepo.save(student);
+//                LOGGER.info("Student has been updated");
+//            }, () -> {
+//                throw new NoSuchStudentException("No student found with id=" + student.getId());
+//            });
     }
 
     public List<Student> getAllStudents() {
@@ -42,13 +44,15 @@ public class StudentService {
     }
 
     public void deleteStudent(int id) {
-        studentRepo.findById(id).ifPresentOrElse(student -> {
-            studentRepo.deleteById(id);
-            LOGGER.info("Student with id=" + id + " has been deleted from database");
-        }, () -> {
-            LOGGER.error("NO STUDENT FOUND WITH ID=" + id);
-            throw new NoSuchStudentException("No student found with id=" + id);
-        });
+        studentRepo.deleteById(id);
+           LOGGER.info("Student with id=" + id + " has been deleted from database");
+//        studentRepo.findById(id).ifPresentOrElse(student -> {
+//            studentRepo.deleteById(id);
+//            LOGGER.info("Student with id=" + id + " has been deleted from database");
+//        }, () -> {
+//            LOGGER.error("NO STUDENT FOUND WITH ID=" + id);
+//            throw new NoSuchStudentException("No student found with id=" + id);
+//        });
 
     }
 

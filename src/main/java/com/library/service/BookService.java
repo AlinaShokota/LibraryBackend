@@ -41,12 +41,14 @@ public class BookService {
     }
 
     public void deleteBook(int id){
-        bookRepo.findById(id).ifPresentOrElse(book -> {
-            bookRepo.deleteById(id);
-            LOGGER.info("Book with id="+id+" has been deleted from database");
-        }, () -> {
-            LOGGER.error("NO BOOK FOUND WITH ID="+ id);
-            throw new NoSuchBookException("No book found with id="+ id);
-        });
+        bookRepo.deleteById(id);
+        LOGGER.info("Book with id="+id+" has been deleted from database");
+//        bookRepo.findById(id).ifPresentOrElse(book -> {
+//            bookRepo.deleteById(id);
+//            LOGGER.info("Book with id="+id+" has been deleted from database");
+//        }, () -> {
+//            LOGGER.error("NO BOOK FOUND WITH ID="+ id);
+//            throw new NoSuchBookException("No book found with id="+ id);
+//        });
     }
 }
