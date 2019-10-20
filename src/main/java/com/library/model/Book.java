@@ -12,6 +12,9 @@ public class Book {
     private String genre;
     private int year;
     private String publisher;
+    @ManyToOne
+    @JoinColumn(name = "student_id", insertable = false, updatable = false)
+    private Student student;
 
     public int getId() {
         return id;
@@ -60,4 +63,6 @@ public class Book {
     public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
+
+
 }
