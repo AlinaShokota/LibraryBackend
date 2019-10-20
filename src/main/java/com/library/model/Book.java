@@ -64,5 +64,16 @@ public class Book {
         this.publisher = publisher;
     }
 
-
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", genre='" + genre + '\'' +
+                ", year=" + year +
+                ", publisher='" + publisher + '\'' +
+                ", student=" + student +
+                '}';
+    }
 }
